@@ -7,12 +7,15 @@ uses
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.FMXUI.Wait,
   Data.DB, FireDAC.Comp.Client, inifiles, uFuncoes, FMX.dialogs,
-  FireDAC.Phys.PGDef, FireDAC.Phys.PG, FMX.forms;
+  FireDAC.Phys.PGDef, FireDAC.Phys.PG, FMX.forms, FireDAC.Stan.Param,
+  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet;
 
 type
   TDataModule1 = class(TDataModule)
-    FDConnection: TFDConnection;
     FDPhysPgDriverLink: TFDPhysPgDriverLink;
+    FDConnection: TFDConnection;
+    AppConnection: TFDConnection;
+    Tbl_testeTable: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
@@ -40,6 +43,7 @@ begin
 
 caminho:=ExtractFilePath(ParamStr(0));
 
+//LEMBRAR DE SETAR OFF A CONNECTION NO DATA MODULE.
 FDPhysPgDriverLink.VendorHome:=caminho; //dlls do postgres na pasta lib aiz do programa;
 FDPhysPgDriverLink.VendorLib:='libpq.dll';
 

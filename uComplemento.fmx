@@ -4,6 +4,7 @@ object frmPrincipal: TfrmPrincipal
   Caption = 'Complemento - Gest'#227'o'
   ClientHeight = 691
   ClientWidth = 1178
+  Position = Default
   FormFactor.Width = 1280
   FormFactor.Height = 1024
   FormFactor.Devices = [Desktop]
@@ -29,14 +30,14 @@ object frmPrincipal: TfrmPrincipal
         Size.Height = 49.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        OnClick = rectTextClick
+        OnMouseEnter = Rectangle4MouseEnter
         object lblMenu1: TText
           Align = Center
           HitTest = False
           Size.Width = 153.000000000000000000
           Size.Height = 32.000000000000000000
           Size.PlatformDefault = False
-          Text = 'Inicio'
+          Text = 'Agenda'
           TextSettings.Font.Size = 16.000000000000000000
         end
       end
@@ -48,7 +49,7 @@ object frmPrincipal: TfrmPrincipal
         Size.Height = 49.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        OnClick = rectTextClick
+        OnMouseEnter = Rectangle4MouseEnter
         object Text1: TText
           Align = Center
           HitTest = False
@@ -67,7 +68,7 @@ object frmPrincipal: TfrmPrincipal
         Size.Height = 49.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        OnClick = rectTextClick
+        OnMouseEnter = Rectangle4MouseEnter
         object Text2: TText
           Align = Center
           HitTest = False
@@ -86,7 +87,7 @@ object frmPrincipal: TfrmPrincipal
         Size.Height = 49.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        OnClick = rectTextClick
+        OnMouseEnter = Rectangle4MouseEnter
         object Text3: TText
           Align = Center
           HitTest = False
@@ -105,7 +106,7 @@ object frmPrincipal: TfrmPrincipal
         Size.Height = 49.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        OnClick = rectTextClick
+        OnMouseEnter = Rectangle4MouseEnter
         object Text4: TText
           Align = Center
           HitTest = False
@@ -153,13 +154,76 @@ object frmPrincipal: TfrmPrincipal
       end
     end
   end
-  object Rectangle5: TRectangle
-    Align = Left
-    Fill.Color = xFF363636
-    Position.Y = 81.000000000000000000
-    Size.Width = 173.000000000000000000
-    Size.Height = 610.000000000000000000
+  object Text5: TText
+    Position.X = 8.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
-    Stroke.Kind = None
+    Text = 'Dashboard'
+    TextSettings.Font.Size = 19.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+  end
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Text = 'teste'
+    Position.X = 304.000000000000000000
+    Position.Y = 352.000000000000000000
+    Size.Width = 217.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Button1: TButton
+    Position.X = 736.000000000000000000
+    Position.Y = 384.000000000000000000
+    TabOrder = 3
+    Text = 'teste'
+    OnClick = Button1Click
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = DataModule1.Tbl_testeTable
+    ScopeMappings = <>
+    Left = 576
+    Top = 328
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'ds_nome'
+      Control = Edit1
+      Direction = linkControlToData
+      Track = False
+    end
+  end
+  object FDQuery1: TFDQuery
+    MasterSource = DataSource1
+    MasterFields = 'ds_nome'
+    Connection = DataModule1.AppConnection
+    SQL.Strings = (
+      'INSERT INTO tbl_teste(ds_nome) VALUES (:NOME);')
+    Left = 824
+    Top = 272
+    ParamData = <
+      item
+        Name = 'NOME'
+        ParamType = ptInput
+      end>
+  end
+  object DataSource1: TDataSource
+    DataSet = DataModule1.Tbl_testeTable
+    Left = 704
+    Top = 488
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSource = DataSource1
+    ScopeMappings = <>
+    Left = 584
+    Top = 336
   end
 end

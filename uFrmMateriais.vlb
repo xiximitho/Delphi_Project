@@ -1,0 +1,15 @@
+﻿[]
+Coordinates=59,1,82,33
+Visible=False
+LayerNames=
+
+[Module Settings]
+ModelLayerNames="select * from tbl_teste"
+
+[Edit1]
+Coordinates=50,60,40,51
+
+[EditButton1]
+Coordinates=150,60,72,33
+Visible=True
+

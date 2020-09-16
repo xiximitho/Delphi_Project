@@ -1,0 +1,17 @@
+inherited frmPrincipal_Windows: TfrmPrincipal_Windows
+  DesignerMasterStyle = 0
+  inherited rectMenu: TRectangle
+    inherited rectNomeApp: TRectangle
+      inherited txtPrincipal: TText
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+  end
+  inherited Text5: TText
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+  end
+  inherited BindSourceDB2: TBindSourceDB
+    DataSource = nil
+    DataSet = nil
+  end
+end

@@ -1,0 +1,27 @@
+object frmMateriais: TfrmMateriais
+  Left = 0
+  Top = 0
+  Caption = 'BlankForm'
+  ClientHeight = 654
+  ClientWidth = 1054
+  Position = OwnerFormCenter
+  FormFactor.Width = 1280
+  FormFactor.Height = 1024
+  FormFactor.Devices = [Desktop]
+  ShowHint = False
+  DesignerMasterStyle = 0
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Position.X = 344.000000000000000000
+    Position.Y = 232.000000000000000000
+    object EditButton1: TEditButton
+      CanFocus = False
+      Cursor = crArrow
+      Size.Width = 28.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+  end
+end
